@@ -1,0 +1,16 @@
+replicaCount: 10
+namespace: production
+image:
+  repository: 992382611366.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repo
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+imagePullSecrets:
+  - name: regcred
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
