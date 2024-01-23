@@ -6,11 +6,11 @@
 ## Instructions
 Before running terraform scripts, make sure you have access to aws account. you can configure your aws account using `aws configure` command and provide `access_key` and `secret_key`.
 
-`terraform init`: Terraform will initialize provider and module that we used in out configuration, it will also try to initialize backend if we provide any. I dont setup any backend in this task since it is a simple one so terraform will use local backend
+* `terraform init`: Terraform will initialize provider and module that we used in out configuration, it will also try to initialize backend if we provide any. I dont setup any backend in this task since it is a simple one so terraform will use local backend
 
-`terrafrom plan`: Run terraform plan to verify before it create any resource in our account.
+* `terrafrom plan`: Run terraform plan to verify before it create any resource in our account.
 
-`terraform apply`: Once we verify the plan output we can run apply by running this command and approve to create resources.
+* `terraform apply`: Once we verify the plan output we can run apply by running this command and approve to create resources.
 
 In `ecr.tf` i have used `null_resources` which used to configure our local environment or remote servers that we created using terraform `remote_exec` or `local_exec`.
 
