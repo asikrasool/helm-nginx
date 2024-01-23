@@ -6,8 +6,6 @@
 ## Instructions
 Before running terraform scripts, make sure you have access to aws account. you can configure your aws account using `aws configure` command and provide `access_key` and `secret_key`.
 
-* Running terraform scripts
-
 `terraform init`: Terraform will initialize provider and module that we used in out configuration, it will also try to initialize backend if we provide any. I dont setup any backend in this task since it is a simple one so terraform will use local backend
 
 `terrafrom plan`: Run terraform plan to verify before it create any resource in our account.
@@ -59,7 +57,7 @@ In `ecr.tf` i have used `null_resources` which used to configure our local envir
 
 # Improvements
 
-* We can use [helm secrets](https://github.com/jkroepke/helm-secrets) to store our secrets in fully encrypted way. It enable us to store fully encrypted secrets.yml in git repository. It is backed by sops and gpg keys.
+We can use [helm secrets](https://github.com/jkroepke/helm-secrets) to store our secrets in fully encrypted way. It enable us to store fully encrypted secrets.yml in git repository. It is backed by sops and gpg keys.
 
 ### Quick Setup (Windows)
 * Install helm plugin by providing `helm plugin install https://github.com/jkroepke/helm-secrets`
