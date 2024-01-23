@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: 992382611366.dkr.ecr.us-east-1.amazonaws.com/my-ecr-repo:1.14.2
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
+
+#kubectl create secret docker-registry regcred --docker-server=992382611366.dkr.ecr.us-east-1.amazonaws.com --docker-username=AWS --docker-password=$(aws ecr get-login-password)
